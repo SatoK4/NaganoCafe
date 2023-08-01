@@ -11,6 +11,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <!--ロゴを追加-->
+      
+      <%= link_to about_path do %>
+        About
+      <% end %>
+      <!--商品一覧のリンク-->
+      <!--新規登録のリンク-->
+      <!--ログインのリンク-->
+    </header>
+    <body>
+      <%= yield %>
+    </body>
+    <footer>
+
+    </footer>
   </body>
 </html>
