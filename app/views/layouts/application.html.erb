@@ -13,13 +13,31 @@
   <body>
     <header>
       <!--ロゴを追加-->
-      
-      <%= link_to about_path do %>
-        About
-      <% end %>
+      <% if customer_signed_in? %>
+        <li>
+          <%= link_to about_path do %>
+            About
+          <% end %>
+        </li>
       <!--商品一覧のリンク-->
-      <!--新規登録のリンク-->
-      <!--ログインのリンク-->
+        <li>
+          <%= link_to "新規登録", new_customer_registration_path  %>
+        </li>
+        <li>
+          <%= link_to new_customer_session_path do %>
+            ログイン
+          <% end %>
+        </li>
+      <% else %>
+      <!--マイページのリンク-->
+      <!--商品一覧のリンク-->
+      <!--カートのリンク-->
+      <li>
+        <%= link_to destroy_customer_session_path, method: :delete do %>
+          ログアウト
+        <% end %>
+      </li>
+      <% end %>
     </header>
     <body>
       <%= yield %>
