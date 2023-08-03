@@ -14,9 +14,14 @@
     <header>
       <!--ロゴを追加-->
       <% if admin_signed_in? %>
-        <%= link_to destroy_admin_session_path, method: :delete do %>
-          ログアウト
-        <% end %>
+        <!--商品一覧のリンク-->
+        <!--会員一覧のリンク-->
+        <!--注文履歴一覧リンク-->
+        <li>
+          <%= link_to destroy_admin_session_path, method: :delete do %>
+            ログアウト
+          <% end %>
+        </li>
       <% elsif customer_signed_in? %>
         <!--マイページのリンク-->
         <!--商品一覧のリンク-->
@@ -34,7 +39,9 @@
         </li>
         <!--商品一覧のリンク-->
         <li>
-          <%= link_to "新規登録", new_customer_registration_path  %>
+          <%= link_to  new_customer_registration_path do %>
+            新規登録
+          <% end %>
         </li>
         <li>
           <%= link_to new_customer_session_path do %>
