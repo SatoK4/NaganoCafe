@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    resources :customers, only:[:show, :edit]
+    resources :customers, only:[:show, :edit, :update]
   end
 
   #管理者用
