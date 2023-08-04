@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
+  namespace :admin do
+    resources :items, only:[:index, :new, :show, :edit, :create, :update]
+  end
 
   root to: "homes#top"
   get '/homes/about' => "homes#about", as: "about"
