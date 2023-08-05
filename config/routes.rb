@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    resources :customers, only:[:show, :edit, :update]
+    # resources :customers, only:[:show, :edit, :update]
+    get '/customers/my_page' => 'customers#show', as: "customer"
+    get '/customers/information/edit' => 'customers#edit', as: "edit_customer"
+    patch '/customers/information' => 'customers#update', as: "update_customer"
+    # get '/customers/unsubscribe', as: "unsubscribe_customer"
+    # patch '/customers/withdraw', as: "withdraw_customer"
   end
 
   #管理者用
@@ -20,6 +25,6 @@ Rails.application.routes.draw do
   end
 
   root to: "homes#top"
-  get '/homes/about' => "homes#about", as: "about"
+  get '/homes/about', as: "about"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
