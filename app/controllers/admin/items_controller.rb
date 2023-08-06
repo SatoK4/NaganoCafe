@@ -10,7 +10,7 @@ class Admin::ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.save
     # 後ほど商品詳細ページへ
-    redirect_to about_path
+    redirect_to admin_items_path
   end
 
   def show
