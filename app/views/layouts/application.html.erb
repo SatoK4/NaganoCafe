@@ -23,7 +23,11 @@
           <% end %>
         </li>
       <% elsif customer_signed_in? %>
-        <!--マイページのリンク-->
+        <li>
+          <%= link_to customer_path do %>
+            マイページ
+          <% end %>
+        </li>
         <!--商品一覧のリンク-->
         <!--カートのリンク-->
         <li>
