@@ -9,7 +9,6 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    # 後ほど商品詳細ページへ
     redirect_to admin_items_path
   end
 
@@ -25,6 +24,6 @@ class Admin::ItemsController < ApplicationController
 
   private
   def item_params
-    params.requie(:item).permit(:image, :name, :introduction)
+    params.require(:item).permit(:image, :name, :introduction, :price)
   end
 end
