@@ -1,2 +1,7 @@
-<h1>Public::Items#show</h1>
-<p>Find me in app/views/public/items/show.html.erb</p>
+<%= image_tag @item.image %>
+<p><%= @item.name %></p>
+<p><%= @item.introduction %></p>
+<!--現在は税抜表示中、今後税込に変更-->
+<p>￥<%= @item.price %></p>
+
+<!--カートに入れる-->
