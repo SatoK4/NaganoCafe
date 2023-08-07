@@ -7,21 +7,13 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    # resources :customers, only:[:show, :edit, :update]
+    resources :items, only:[:index, :show]
     get '/customers/my_page' => 'customers#show', as: "customer"
     get '/customers/information/edit' => 'customers#edit', as: "edit_customer"
     patch '/customers/information' => 'customers#update', as: "update_customer"
     get '/customers/unsubscribe', as: "unsubscribe_customer"
     patch '/customers/withdraw', as: "withdraw_customer"
   end
-
-  # resources :customers do
-  #   collection do
-  #     get 'unsubscribe'
-  #     patch 'withdraw'
-  #   end
-  # end
-
 
   #管理者用
   # URL /admin/sign_in ...
