@@ -19,7 +19,11 @@
             商品一覧
           <% end %>
         </li>
-        <!--会員一覧のリンク-->
+        <li>
+          <%= link_to admin_customers_path do %>
+            会員一覧
+          <% end %>
+        </li>
         <!--注文履歴一覧リンク-->
         <li>
           <%= link_to destroy_admin_session_path, method: :delete do %>
@@ -32,7 +36,11 @@
             マイページ
           <% end %>
         </li>
-        <!--商品一覧のリンク-->
+        <li>
+          <%= link_to items_path do %>
+            商品一覧
+          <% end %>
+        </li>
         <!--カートのリンク-->
         <li>
           <%= link_to destroy_customer_session_path, method: :delete do %>
@@ -45,7 +53,11 @@
             About
           <% end %>
         </li>
-        <!--商品一覧のリンク-->
+        <li>
+          <%= link_to items_path do %>
+            商品一覧
+          <% end %>
+        </li>
         <li>
           <%= link_to  new_customer_registration_path do %>
             新規登録
