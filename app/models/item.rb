@@ -1,4 +1,7 @@
 class Item < ApplicationRecord
+  has_many :cart_
+  has_many :order_details
+  
   has_one_attached :image
 
   def total_price
