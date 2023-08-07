@@ -8,7 +8,7 @@
       <th>税抜価格</th>
     </tr>
   </thead>
-  
+
   <tbody>
     <% @items.each do |item|%>
     <tr>
@@ -23,3 +23,5 @@
     </tr>
   </tbody>
 </table>
+
+<%= paginate @items %>
