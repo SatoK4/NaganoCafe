@@ -14,7 +14,11 @@
     <header>
       <!--ロゴを追加-->
       <% if admin_signed_in? %>
-        <!--商品一覧のリンク-->
+        <li>
+          <%= link_to admin_items_path do %>
+            商品一覧
+          <% end %>
+        </li>
         <!--会員一覧のリンク-->
         <!--注文履歴一覧リンク-->
         <li>
