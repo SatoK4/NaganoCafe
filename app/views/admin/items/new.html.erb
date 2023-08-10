@@ -1,37 +1,30 @@
 <h2>商品新規登録</h2>
+<% if @item.errors.any? %>
+  <%= @item.errors.count %>件のエラーが発生しました。
+  <ul>
+    <% @item.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @item, url: admin_items_path do |f| %>
 <table>
   <tr>
-    <td>
-      <%= f.label :商品画像 %>
-    </td>
-    <td>
-      <%= f.file_field :image, accept: "image/*" %>
-    </td>
+    <td><%= f.label :商品画像 %></td>
+    <td><%= f.file_field :image, accept: "image/*" %></td>
   </tr>
   <tr>
-    <td>
-      <%= f.label :商品名 %>
-    </td>
-    <td>
-      <%= f.text_area :name %>
-    </td>
+    <td><%= f.label :商品名 %></td>
+    <td><%= f.text_area :name %></td>
   </tr>
   <tr>
-    <td>
-      <%= f.label :商品説明 %>
-    </td>
-    <td>
-      <%= f.text_area :introduction %>
-    </td>
+    <td><%= f.label :商品説明 %></td>
+    <td><%= f.text_area :introduction %></td>
   </tr>
   <tr>
-    <td>
-      <%= f.label :税込み価格 %>
-    </td>
-    <td>
-      <%= f.text_area :price %>円
-    </td>
+    <td><%= f.label :税込価格 %></td>
+    <td><%= f.text_area :price %>円</td>
   </tr>
 </table>
 <%= f.submit "新規登録" %>
