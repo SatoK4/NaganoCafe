@@ -4,10 +4,10 @@ class Item < ApplicationRecord
   
   has_one_attached :image
   
+  validates :image       , presence: true
   validates :name        , presence: true
   validates :introduction, presence: true
   validates :price       , presence: true
-  validates :image       , presence: true
 
   def total_price
     tax = 1.10
