@@ -1,7 +1,6 @@
 <%= image_tag @item.image %>
 <p><%= @item.name %></p>
 <p><%= @item.introduction %></p>
-<!--現在は税抜表示中、今後税込に変更-->
-<p>￥<%= @item.price %>(税込)</p>
+<p>￥<%= @item.total_price %>(税込)</p>
 
 <!--カートに入れる-->
