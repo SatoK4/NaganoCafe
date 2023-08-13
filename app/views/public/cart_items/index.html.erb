@@ -1,5 +1,5 @@
 <h2>ショッピングカート</h2>
-
+<!--カートを空にするボタン-->
 <table>
   <thead>
     <tr>
@@ -17,9 +17,12 @@
         <%= image_tag cart_item.item.image %>
         <%= cart_item.item.name %>
       </td>
-      <td><%= cart_item.item.total_price %></td>
+      <td><%= cart_item.item.with_tax_price %></td>
       <td><%= cart_item.amount %></td>
-      <td><%= cart_item.sub_total %></td>
+      <td>
+        <%= cart_item.sub_total %>
+        <% @total_price += cart_item.sub_total %>
+      </td>
       <td>
         <%= link_to cart_item_path(cart_item.id), method: :delete do %>
           削除する
@@ -28,4 +31,12 @@
     <% end %>
     </tr>
   </tbody>
+</table>
+
+<!--買い物を続けるボタン-->
+<table>
+  <tr>
+    <td>合計金額</td>
+    <td><%= @total_price %></td>
+  </tr>
 </table>
