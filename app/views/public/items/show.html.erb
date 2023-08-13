@@ -1,7 +1,7 @@
 <%= image_tag @item.image %>
 <p><%= @item.name %></p>
 <p><%= @item.introduction %></p>
-<p>￥<%= @item.total_price %>(税込)</p>
+<p>￥<%= @item.with_tax_price %>(税込)</p>
 
 <!--カートに入れる-->
 <%= form_with(model: @cart_item, url: cart_items_path, method: :post)do |f| %>

@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :introduction, presence: true
   validates :price       , presence: true
 
-  def total_price
+  def with_tax_price
     tax = 1.10
     (price * tax).round
   end
