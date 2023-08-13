@@ -15,11 +15,11 @@ class Customer < ApplicationRecord
     self.last_name_kana + " " + self.first_name_kana
   end
 
-  def withdrawal_status
-    if is_deleted == true
-      puts "退会"
+  def withdraw_status
+    if is_deleted == false
+      有効
     else
-      puts "有効"
+      退会
     end
   end
 end

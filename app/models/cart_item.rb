@@ -4,6 +4,6 @@ class CartItem < ApplicationRecord
 
   def sub_total
     tax = 1.1
-    ((cart_item.item.price * cart_item.amount) * tax).to_i
+    ((item.price * amount) * tax).to_i
   end
 end
