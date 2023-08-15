@@ -37,9 +37,17 @@
 </table>
 
 <!--買い物を続けるボタン-->
+<%= link_to root_path do %>
+  買い物を続ける
+<% end %>
+
 <table>
   <tr>
     <td>合計金額</td>
     <td><%= @total_price %></td>
   </tr>
 </table>
+
+<%= link_to orders_path do %>
+  情報入力へ進む
+<% end %>
