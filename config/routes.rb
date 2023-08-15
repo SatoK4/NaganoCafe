@@ -13,6 +13,12 @@ Rails.application.routes.draw do
         delete 'destroy_all'
       end
     end
+    resources :orders, only:[:new, :index, :show, :create]do
+      collection do
+        post 'confirm'
+        get 'complete'
+      end
+    end
     get '/customers/my_page' => 'customers#show', as: "customer"
     get '/customers/information/edit' => 'customers#edit', as: "edit_customer"
     patch '/customers/information' => 'customers#update', as: "update_customer"
