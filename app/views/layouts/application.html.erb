@@ -41,7 +41,11 @@
             商品一覧
           <% end %>
         </li>
-        <!--カートのリンク-->
+        <li>
+          <%= link_to cart_items_path do %>
+            カート
+          <% end %>
+        </li>
         <li>
           <%= link_to destroy_customer_session_path, method: :delete do %>
             ログアウト
