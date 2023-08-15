@@ -13,6 +13,7 @@
   <body>
     <header>
       <!--ロゴを追加-->
+      <p>ようこそ、<%= current_customer.last_name %>さん！</p>
       <% if admin_signed_in? %>
         <li>
           <%= link_to admin_items_path do %>
