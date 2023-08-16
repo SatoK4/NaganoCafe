@@ -1,5 +1,8 @@
 <h2>商品一覧</h2>
-<!--新規商品登録画面へのリンクボタンを作成-->
+<%= link_to new_admin_item_path do %>
+商品登録画面
+<!--後ほどアイコンに変更-->
+<% end %>
 <table>
   <thead>
     <tr>
@@ -18,7 +21,7 @@
           <%= item.name %>
         <% end %>
       </td>
-      <td><%= item.price %>円</td>
+      <td><%= item.price %></td>
     <% end %>
     </tr>
   </tbody>
