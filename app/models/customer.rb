@@ -17,9 +17,9 @@ class Customer < ApplicationRecord
 
   def withdraw_status
     if is_deleted == false
-      有効
+      "有効"
     else
-      退会
+      "退会"
     end
   end
 end
