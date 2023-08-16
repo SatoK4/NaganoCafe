@@ -3,7 +3,6 @@
 <p><%= @item.introduction %></p>
 <p>￥<%= @item.with_tax_price %>(税込)</p>
 
-<!--カートに入れる-->
 <%= form_with(model: @cart_item, url: cart_items_path, method: :post)do |f| %>
   <%= f.label :amount, "数量を選択して下さい。" %>
   <%= f.select :amount, *[1..10] %>
