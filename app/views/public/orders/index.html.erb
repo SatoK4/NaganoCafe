@@ -18,9 +18,9 @@
       <td><%= order.name %></td>
       <td><%= order.total_payment %></td>
       <td>
-        <!--注文詳細を表示するリンクを作成-->
-        <!--%= link_to _path do %>-->
-        <!--% end %>-->
+        <%= link_to order_path(order.id) do %>
+          表示する
+        <% end %>
       </td>
     <% end %>
     </tr>
