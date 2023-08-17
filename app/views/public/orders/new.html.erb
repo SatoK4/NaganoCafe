@@ -8,8 +8,8 @@
 <%= f.label :payment_methods_transfer, Order.payment_methods_i18n[:transfer] %>
 <% end %>
 <p>お届け先</p>
- <%= '〒' + current_customer.postal_code + ' ' + current_customer.address + ' ' + current_customer.full_name %>
- 
+<%= '〒' + current_customer.postal_code + ' ' + current_customer.address + ' ' + current_customer.full_name %>
+  
 <%= link_to confirm_orders_path do %>
   確認画面へ進む
 <% end %>
