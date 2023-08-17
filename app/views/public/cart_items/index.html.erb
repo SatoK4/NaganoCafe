@@ -1,5 +1,4 @@
 <h2>ショッピングカート</h2>
-<!--カートを空にするボタン-->
 <%= link_to destroy_all_cart_items_path, method: :delete do %>
   カートを空にする
 <% end %>
@@ -41,7 +40,6 @@
   </tbody>
 </table>
 
-<!--買い物を続けるボタン-->
 <%= link_to root_path do %>
   買い物を続ける
 <% end %>
