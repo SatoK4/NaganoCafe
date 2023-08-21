@@ -38,6 +38,9 @@ class Public::OrdersController < ApplicationController
     end
   end
 
+  def complete
+  end
+
   private
   def order_params
     params.require(:order).permit(:payment_method, :postal_code, :address, :name, :image, :total_payment)
