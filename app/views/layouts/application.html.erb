@@ -25,7 +25,11 @@
             会員一覧
           <% end %>
         </li>
-        <!--注文履歴一覧リンク-->
+        <li>
+          <%= link_to admin_root_path do %>
+            注文履歴一覧
+          <% end %>
+        </li>
         <li>
           <%= link_to destroy_admin_session_path, method: :delete do %>
             ログアウト
