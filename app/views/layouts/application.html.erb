@@ -13,72 +13,77 @@
 
   <body>
     <header>
-      <!--ロゴを追加-->
-      <% if admin_signed_in? %>
-        <li>
-          <%= link_to admin_items_path do %>
-            商品一覧
+      <div class="container">
+        <div class="row">
+        <!--ロゴを追加-->
+      
+          <% if admin_signed_in? %>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to admin_items_path do %>
+                商品一覧
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to admin_customers_path do %>
+                会員一覧
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to admin_root_path do %>
+                注文履歴一覧
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to destroy_admin_session_path, method: :delete do %>
+                ログアウト
+              <% end %>
+            </button>
+          <% elsif customer_signed_in? %>
+            <p>ようこそ、<%= current_customer.last_name %>さん！</p>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to customer_path do %>
+                マイページ
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to items_path do %>
+                商品一覧
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to cart_items_path do %>
+                カート
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to destroy_customer_session_path, method: :delete do %>
+                ログアウト
+              <% end %>
+            </button>
+          <% else %>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to about_path do %>
+                About
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to items_path do %>
+                商品一覧
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to  new_customer_registration_path do %>
+                新規登録
+              <% end %>
+            </button>
+            <button type="button" class="btn btn-outline-dark">
+              <%= link_to new_customer_session_path do %>
+                ログイン
+              <% end %>
+            </button>
           <% end %>
-        </li>
-        <li>
-          <%= link_to admin_customers_path do %>
-            会員一覧
-          <% end %>
-        </li>
-        <li>
-          <%= link_to admin_root_path do %>
-            注文履歴一覧
-          <% end %>
-        </li>
-        <li>
-          <%= link_to destroy_admin_session_path, method: :delete do %>
-            ログアウト
-          <% end %>
-        </li>
-      <% elsif customer_signed_in? %>
-        <p>ようこそ、<%= current_customer.last_name %>さん！</p>
-        <li>
-          <%= link_to customer_path do %>
-            マイページ
-          <% end %>
-        </li>
-        <li>
-          <%= link_to items_path do %>
-            商品一覧
-          <% end %>
-        </li>
-        <li>
-          <%= link_to cart_items_path do %>
-            カート
-          <% end %>
-        </li>
-        <li>
-          <%= link_to destroy_customer_session_path, method: :delete do %>
-            ログアウト
-          <% end %>
-        </li>
-      <% else %>
-        <li>
-          <%= link_to about_path do %>
-            About
-          <% end %>
-        </li>
-        <li>
-          <%= link_to items_path do %>
-            商品一覧
-          <% end %>
-        </li>
-        <li>
-          <%= link_to  new_customer_registration_path do %>
-            新規登録
-          <% end %>
-        </li>
-        <li>
-          <%= link_to new_customer_session_path do %>
-            ログイン
-          <% end %>
-        </li>
-      <% end %>
+        </div>
+      </div>
     </header>
     <body>
       <%= yield %>
