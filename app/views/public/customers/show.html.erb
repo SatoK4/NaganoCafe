@@ -1,38 +1,45 @@
-<h2>マイページ</h2>
-
-<p>登録情報</p>
-<%= link_to edit_customer_path do %>
-  編集する
-<% end %>
-
-<table>
-  <tr>
-    <td>氏名</td>
-    <td><%= @customer.full_name %></td>
-  </tr>
-  <tr>
-    <td>カナ</td>
-    <td><%= @customer.full_name_kana %></td>
-  </tr>
-  <tr>
-    <td>郵便番号</td>
-    <td><%= @customer.postal_code %></td>
-  </tr>
-  <tr>
-    <td>住所</td>
-    <td><%= @customer.address %></td>
-  </tr>
-  <tr>
-    <td>電話番号</td>
-    <td><%= @customer.telephone_number %></td>
-  </tr>
-  <tr>
-    <td>メールアドレス</td>
-    <td><%= @customer.email %></td>
-  </tr>
-</table>
-
-  <p>注文履歴</p>
-  <%= link_to orders_path do %>
-    一覧を見る
-  <% end %>
+<div class="container">
+  <div class="row">
+    <h3 class="bg-light">マイページ</h3>
+  </div>
+  <div class="row">
+    <p class="offset-1"><strong>登録情報</strong></p>
+    <%= link_to edit_customer_path, class: "btn btn-sm btn-success ml-5" do %>
+      編集する
+    <% end %>
+  </div>
+  <div class="row">
+    <table class="table table-bordered border-dark offset-1">
+      <tr>
+        <td class="table-active" style="width:25%">氏名</td>
+        <td style="width:75%"><%= @customer.full_name %></td>
+      </tr>
+      <tr>
+        <td class="table-active" style="width:25%">カナ</td>
+        <td style="width:75%"><%= @customer.full_name_kana %></td>
+      </tr>
+      <tr>
+        <td class="table-active" style="width:25%">郵便番号</td>
+        <td style="width:75%"><%= @customer.postal_code %></td>
+      </tr>
+      <tr>
+        <td class="table-active" style="width:25%">住所</td>
+        <td style="width:75%"><%= @customer.address %></td>
+      </tr>
+      <tr>
+        <td class="table-active" style="width:25%">電話番号</td>
+        <td style="width:75%"><%= @customer.telephone_number %></td>
+      </tr>
+      <tr>
+        <td class="table-active">メールアドレス</td>
+        <td style="width:75%"><%= @customer.email %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+    <p class="offset-1"><strong>注文履歴</strong></p>
+    <%= link_to orders_path, class: "btn btn-sm btn-primary ml-5" do %>
+      一覧を見る
+    <% end %>
+  </div>
+</div>
