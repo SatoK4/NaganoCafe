@@ -1,33 +1,37 @@
-<h2>ログイン</h2>
-<p>会員の方はこちらからログイン</p>
-
-<%= form_with model: @customer, url: new_customer_session_path do |f| %>
-  <table>
-    <tr>
-      <div class="field">
-        <td><%= f.label :"メールアドレス" %></td>
-        <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
-      </div>
-    </tr>
-    <tr>
-      <div class="field">
-        <td><%= f.label :"パスワード" %></td>
-        <td><%= f.password_field :password, autocomplete: "current-password" %></td>
-      </div>
-    </tr>
-    <tr>
-      <div class="actions">
-        <td></td>
-        <td><%= f.submit "ログイン" %></td>
-      </div>
-    </tr>
-  </table>
-<% end %>
-
-<p>会員登録がお済でない方</p>
-<p>
-  <%= link_to new_customer_session_path do %>
-    こちら
-  <% end %>
-  から新規登録を行ってください。
-</p>
+<div class="container">
+  <div class="row">
+    <h3 class="bg-light">ログイン</h3>
+  </div>
+  <div class="row">
+    <p class="offset-1 bg-light">会員の方はこちらからログイン</p>
+  </div>
+  <div class="row offset-1">
+    <%= form_with model: @customer, url: new_customer_session_path do |f| %>
+      <table class="table table-borderless table-sm">
+        <tr>
+          <td><%= f.label :"メールアドレス" %></td>
+          <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :"パスワード" %></td>
+          <td><%= f.password_field :password, autocomplete: "current-password", class: "form-control" %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= f.submit "ログイン", class: "btn btn-primary" %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+  <div class="row">
+    <p class="offset-1 bg-light">会員登録がお済でない方</p>
+  </div>
+  <div class="row offset-1">
+    <p>
+      <%= link_to new_customer_session_path do %>
+        こちら
+      <% end %>
+      から新規登録を行ってください。
+    </p>
+  </div>
+</div>
