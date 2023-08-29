@@ -1,27 +1,32 @@
-<h2>会員一覧</h2>
-<table>
-  <thead>
-    <tr>
-      <th>会員ID</th>
-      <th>氏名</th>
-      <th>メールアドレス</th>
-      <th>ステータス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @customers.each do |customer| %>
-    <tr>
-      <td><%= customer.id %></td>
-      <td>
-        <%= link_to admin_customer_path(customer.id) do %>
-          <%= customer.full_name %>
+<div class="container">
+  <div class="row">
+    <h3 class="bg-light">会員一覧</h3>
+  </div>
+  <div class="row">
+    <table class="table table-sm table-bordered">
+      <thead class="bg-light">
+        <tr>
+          <th>会員ID</th>
+          <th>氏名</th>
+          <th>メールアドレス</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @customers.each do |customer| %>
+        <tr>
+          <td><%= customer.id %></td>
+          <td>
+            <%= link_to admin_customer_path(customer.id) do %>
+              <%= customer.full_name %>
+            <% end %>
+          </td>
+          <td><%= customer.email %></td>
+          <td class="text-center"><%= customer.withdraw_status %></td>
         <% end %>
-      </td>
-      <td><%= customer.email %></td>
-      <td><%= customer.withdraw_status %></td>
-    <% end %>
-    </tr>
-  </tbody>
-</table>
-
-<%= paginate @customers %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%= paginate @customers %>
+</div>
