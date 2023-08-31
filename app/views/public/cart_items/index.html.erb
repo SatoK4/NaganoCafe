@@ -27,7 +27,7 @@
           <% @cart_items.each do |cart_item| %>
           <tr>
             <td class="align-middle">
-              <div><%= image_tag cart_item.item.image %></div>
+              <div><%= image_tag cart_item.item.image, size:"250x250" %></div>
               <div><%= cart_item.item.name %></div>
             </td>
             <td class="align-middle"><%= cart_item.item.with_tax_price %></td>
